@@ -10,10 +10,9 @@ COPY ./requirements.txt /app
 
 # Install necessary OS-level dependencies for libraries like OpenCV and PyMuPDF
 # This prevents common errors during library installation or runtime
-RUN apt-get update && apt-get install -y \
-    libgl1-mesa-glx \
-    && rm -rf /var/lib/apt/lists/*
-
+RUN apt-get update
+RUN apt-get install -y --no-install-recommends libgl1-mesa-glx 
+RUN rm -rf /var/lib/apt/lists/*
 # Upgrade pip to the latest version
 RUN pip install --upgrade pip
 
