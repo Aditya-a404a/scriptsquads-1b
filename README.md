@@ -88,7 +88,6 @@ docker build --platform linux/amd64 -t adobe-hackathon-2025:round1b .
 ## To process a new collection folder for a test case, you must add a new -v line to the docker run command. This maps your new folder from your computer into the container's /app directory, making it accessible to the utils.py script.
 ```bash
 docker run --rm \
-  -v ./app:/app \
   -v ./'Collection 1':/app/'Collection 1' \
   -v ./'Collection 2':/app/'Collection 2' \
   -v ./'Collection 3':/app/'Collection 3' \
